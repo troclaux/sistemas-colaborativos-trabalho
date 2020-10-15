@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-toolbar>
+      <img src="../../assets/logo.png">
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="image">
+
+    <ion-card *ngFor="let user of users" >
+        <ion-grid class="user_info_topo_container">
+            <ion-row>
+                <ion-col>
+                    <ion-avatar>
+                        <img src={{user.photo}}>
+                    </ion-avatar>
+                </ion-col>
+                <ion-col>
+                    <ion-card-title color="secondary">{{ user.name }}</ion-card-title>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-card-subtitle>{{ user.degree }}</ion-card-subtitle>
+        <ion-button (click)="unfollowUser(user.id)" (click)= "presentToast()"><ion-icon class="icon-button" name="heart-dislike"></ion-icon>Deixar de seguir</ion-button>
+    </ion-card>
+
+</ion-content>
